@@ -101,7 +101,9 @@ static void update_icon(int status) {
 		gtk_widget_show_all (plugin->priv->label);
 		gtk_widget_show (GTK_WIDGET (plugin));
 	} else {
-		hd_status_plugin_item_set_status_area_icon (HD_STATUS_PLUGIN_ITEM (plugin), NULL);
+		gtk_widget_hide(GTK_WIDGET (plugin->priv->label));
+		gtk_widget_hide(GTK_WIDGET (plugin));
+		hd_status_plugin_item_set_status_area_icon (HD_STATUS_PLUGIN_ITEM (plugin), NULL);	
 		gtk_widget_destroy(GTK_WIDGET (plugin->priv->label));
 	}
 }
