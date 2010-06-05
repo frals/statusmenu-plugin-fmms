@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=statusmenu-fmms
 Type=default
-X-Path=statusmenu-fmms.so
+X-Path=fmms_status.so
