@@ -76,7 +76,6 @@ fmms_status_plugin_init (FMMSStatusPlugin *aplugin)
 static void update_icon(int status) {
 	if (status > 0) {
 		
-		GList *list = gtk_icon_theme_list_icons (icon_theme, NULL);
 		GdkPixbuf *pixbuf = gtk_icon_theme_load_icon (icon_theme, "general_packetdata",
 		    FMMS_STATUS_PLUGIN_ICON_SIZE, GTK_ICON_LOOKUP_NO_SVG, NULL);
 		hd_status_plugin_item_set_status_area_icon (HD_STATUS_PLUGIN_ITEM (plugin), pixbuf);
@@ -110,9 +109,6 @@ static void update_icon(int status) {
 static DBusHandlerResult
 signal_filter (DBusConnection *connection, DBusMessage *message, void *user_data)
 {
-	/* User data is the event loop we are running in */
-	GMainLoop *loop = user_data;
-
 	/*A signal on the se.frals.fmms.statusmenu interface */
 	if (dbus_message_is_signal (message, "se.frals.fmms.statusmenu", "Send")) {
 		update_icon(1);

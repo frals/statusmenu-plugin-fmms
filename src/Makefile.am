@@ -1,5 +1,4 @@
-hildondesktoplib_LTLIBRARIES= fmms_status.la 
-	
+hildondesktoplib_LTLIBRARIES= fmms_status.la
 
 fmms_status_la_CPPFLAGS = $(FMMS_STATUS_CFLAGS)
 
