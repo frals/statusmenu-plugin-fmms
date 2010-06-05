@@ -1,11 +1,13 @@
 Source: statusmenu-fmms
 Section: libs
-Priority: extra
+Priority: optional
 Maintainer: Nick Leppänen Larsson <frals@frals.se>
-Build-Depends: debhelper (>= 5), autotools-dev
+Build-Depends: debhelper (>= 5), autotools-dev, libhildon1-dev (>=2.1.29), libdbus-glib-1-dev, libhildondesktop1-dev (>=2.1.0), libglib2.0-dev
 Standards-Version: 3.7.2
 
 Package: statusmenu-fmms
 Architecture: any
+XB-Maemo-Display-Name: Status bar icon for fMMS
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: Proves status bar icon for fMMS
+XSBC-Bugtracker: https://bugs.maemo.org/enter_bug.cgi?product=fMMS
+Description: Provides status bar icon for fMMS
