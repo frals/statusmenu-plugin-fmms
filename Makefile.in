@@ -175,7 +175,12 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
-SUBDIRS = src
+SUBDIRS = src data
+MAINTAINERCLEANFILES = aclocal.m4 compile config.h.in 	\
+	config.guess config.sub configure		\
+	depcomp install-sh ltmain.sh missing		\
+	Makefile.in
+
 DISTCLEANFILES = *~
 all: all-recursive
 
@@ -513,6 +518,7 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
 clean: clean-recursive
 
 clean-am: clean-generic clean-libtool mostlyclean-am
